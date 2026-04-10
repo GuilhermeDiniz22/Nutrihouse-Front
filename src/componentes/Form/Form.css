@@ -1,0 +1,100 @@
+.form-campo {
+  --form-accent-primary: #0f766e;
+  --form-accent-secondary: #0ea5e9;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  min-width: 0;
+}
+
+.form-campo label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--form-accent-primary);
+}
+
+.form-campo input,
+.form-campo select {
+  width: 100%;
+  padding: 0.9rem 0.95rem;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 12px;
+  font-size: 0.98rem;
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.9);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-campo select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #0f766e 50%),
+    linear-gradient(135deg, #0f766e 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(50% - 3px), calc(100% - 12px) calc(50% - 3px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.form-campo input:focus,
+.form-campo select:focus {
+  outline: none;
+  border-color: var(--form-accent-secondary);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.18);
+  transform: translateY(-1px);
+}
+
+.form-campo input::placeholder {
+  color: #64748b;
+}
+
+.form-campo--full {
+  grid-column: 1 / -1;
+}
+
+.form-acoes {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-botao {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.78rem 1.25rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #852f2f;
+  background: linear-gradient(135deg, var(--form-accent-primary), var(--form-accent-secondary));
+  box-shadow: 0 10px 24px rgba(14, 116, 144, 0.24);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.form-botao:hover,
+.form-botao:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 26px rgba(15, 23, 42, 0.2);
+  filter: saturate(1.06);
+}
+
+@media (max-width: 680px) {
+  .form-campo label {
+    font-size: 0.78rem;
+  }
+
+  .form-campo input,
+  .form-campo select {
+    font-size: 0.95rem;
+    padding: 0.82rem 0.86rem;
+  }
+
+  .form-acoes {
+    justify-content: stretch;
+  }
+
+  .form-botao {
+    width: 100%;
+  }
+}
